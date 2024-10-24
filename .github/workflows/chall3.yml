@@ -1,9 +1,9 @@
 name: Secure workflow with intermediate env variable
   
-  on:
+on:
     issues:
-    
-  jobs:
+
+jobs:
     test:
       runs-on: ubuntu-latest
       steps:
@@ -12,9 +12,10 @@ name: Secure workflow with intermediate env variable
             issue_body: ${{ github.event.issue.body }}
           run: |
             echo "USERINPUT=$issue_body" >> "$GITHUB_ENV"
-  
+
         - name: Run any unrelated commands in Bash securely
           run: |
             echo "Hello World !"
           env:
             FLAG: ${{ secrets.FLAG }}
+            
