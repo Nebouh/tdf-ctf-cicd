@@ -1,0 +1,20 @@
+name: Secure workflow with intermediate env variable
+  
+  on:
+    issues:
+    
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Set the intermediate environment variable for security
+          env:
+            issue_body: ${{ github.event.issue.body }}
+          run: |
+            echo "USERINPUT=$issue_body" >> "$GITHUB_ENV"
+  
+        - name: Run any unrelated commands in Bash securely
+          run: |
+            echo "Hello World !"
+          env:
+            FLAG: ${{ secrets.FLAG }}
