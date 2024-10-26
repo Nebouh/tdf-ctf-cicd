@@ -1,0 +1,17 @@
+name: Look mom, without env
+
+on:
+    issues:
+  
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            name: Check my flag is correctly masked
+                run: "echo Flag: ${{ secrets.FLAG }}"
+
+            name: Unsafe right ?
+                run: "echo Body: ${{ github.event.issue.body }}"
+
+            name: But whatever
+                run: "echo Void: "
