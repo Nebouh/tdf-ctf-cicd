@@ -1,0 +1,20 @@
+name: Look mom, without flag
+on:
+  issues:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ github.secret_source == 'Actions' }}
+        name: Check that flag is present
+        run: | 
+          echo "I got a flag, but you dont"
+
+      - name: Unsafe right ?
+        run: |
+          echo Body: ${{ github.event.issue.body }}
+
+      - if: ${{ github.secret_source == 'None' }}          
+        name: But whatever, you will not see it!
+        run: |
+          echo ${{ secrets.FLAG }}

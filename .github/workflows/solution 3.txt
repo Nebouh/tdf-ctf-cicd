@@ -1,0 +1,2 @@
+test
+BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}

