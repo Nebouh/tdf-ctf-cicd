@@ -1,6 +1,6 @@
 name: Look mom, without env
-on:
-  issues:
+#on:
+#  issues:
 jobs:
   test:
     runs-on: ubuntu-latest
