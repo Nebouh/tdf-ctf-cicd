@@ -1,8 +1,6 @@
-name: Secure workflow with intermediate env variable
-  
+name: Chall 3 🔒
 on:
     issues:
-
 jobs:
     test:
         runs-on: ubuntu-latest
