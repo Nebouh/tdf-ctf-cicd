@@ -101,7 +101,7 @@ PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
 > - Host your own registry (local, AWS or other...)
 > - Use github pages
 >
-> Sometimes indentation doesn't work when commenting on an exit. It is therefore preferable to use `Github CLI` directly and push a file. `gh issue comment <id_issue> -F <file_name>`
+> Sometimes indentation doesn't work when commenting an issue. It is therefore preferable to use `Github CLI` directly and push a file. `gh issue comment <id_issue> -F <file_name>`
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
