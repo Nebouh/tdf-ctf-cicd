@@ -1,0 +1,28 @@
+name: Chall 1 🔒
+
+on:
+  issue_comment:
+    types: [created, edited]
+    
+permissions:
+  issues: write
+
+jobs:
+  chall:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cleanup your mess
+      env:
+        ID: ${{ github.event.comment.id }}
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh api \
+        --method DELETE \
+        /repos/${{ github.repository }}/issues/comments/$ID
+        
+    - name: View issue information
+      run: |
+        echo '${{ github.event.comment.body }}'
+      env:
+        FLAG: ${{ secrets.FLAG }}
+      

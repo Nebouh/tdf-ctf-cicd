@@ -1,0 +1,14 @@
+name: Rate limited...
+
+on:
+  workflow_dispatch:
+
+jobs:
+  chall:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Rate limit check
+      run: |
+        gh api /rate_limit
+      env:
+        GH_TOKEN: ${{ github.token }}
