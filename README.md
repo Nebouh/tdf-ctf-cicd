@@ -7,18 +7,24 @@
       <a href="#chall-1">Challenge 1</a>
     </li>
     <li>
-      <a href="#gchall-2">Challenge 2</a>
+      <a href="#chall-2">Challenge 2</a>
       <ul>
         <li><a href="#using-pip_index_url">Using PIP_INDEX_URL</a></li>
         <li><a href="#using-pip_constraint">Using PIP_CONSTRAINT</a></li>
       </ul>
     </li>
     <li>
-      <a href="#chall-3">Challenge 2</a>
+      <a href="#chall-3">Challenge 3</a>
       <ul>
-        <li><a href="#prerequisites">Solution 1</a></li>
-        <li><a href="#installation">Solution 2</a></li>
+        <li><a href="#using-bash_env">Using BASH_ENV</a></li>
+        <li><a href="#using-bash_func">Using BASH_FUNC</a></li>
       </ul>
+    </li>
+    <li>
+      <a href="#chall-4">Challenge 4</a>
+    </li>
+    <li>
+      <a href="#chall-5">Challenge 5</a>
     </li>
   </ol>
 </details>
