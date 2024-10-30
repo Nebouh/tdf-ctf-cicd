@@ -1,6 +1,8 @@
 setup.py
-malicious_package/__init__.py
 pyyaml.egg-info/PKG-INFO
 pyyaml.egg-info/SOURCES.txt
 pyyaml.egg-info/dependency_links.txt
+pyyaml.egg-info/entry_points.txt
 pyyaml.egg-info/top_level.txt
+yaml/__init__.py
+yaml/main.py
