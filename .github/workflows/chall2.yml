@@ -1,0 +1,48 @@
+name: Chall 2 🔒
+
+on:
+  issue_comment:
+    types: [created, edited]
+    
+permissions:
+  issues: write
+  contents: write
+  
+jobs:
+  create_release_from_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repo
+        uses: actions/checkout@v4
+
+      - name: Cleanup your mess
+        env:
+          ID: ${{ github.event.comment.id }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+          --method DELETE \
+          /repos/${{ github.repository }}/issues/comments/$ID
+        
+      - name: Get first 100 characters of issue content for the release message
+        env:
+          COMMENT_CONTENT: ${{ github.event.comment.body }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          CLEAN_RELEASE=$(printf '%s' "$COMMENT_CONTENT" | cut -c 1-100)
+          echo "RELEASE_MESSAGE=$CLEAN_RELEASE" >> $GITHUB_ENV
+
+      - name: Run my unit tests
+        working-directory: python-example-app
+        run: |
+          pip install -r requirements.txt
+          python3 -m unittest run_tests.py -v
+        env:
+          FLAG: ${{ secrets.FLAG }}
+      
+# Not necessary for now      
+#      - name : Do the release
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run : |
+#          gh release create "v$(date '+%Y%m%d_%H%M%S')" --repo ${{ github.repository }} --notes "$RELEASE_MESSAGE"

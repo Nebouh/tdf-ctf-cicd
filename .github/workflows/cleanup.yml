@@ -1,0 +1,23 @@
+name: No logs for you
+on:
+  workflow_run:
+    workflows: ["Chall 2 🔒"]
+    types:
+      - completed
+
+permissions:
+  actions: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cleanup your mess
+      env:
+        ID: ${{ github.event.comment.id }}
+        PAYLOAD: ${{ github.event.issue.body }}
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh api repos/${{ github.repository }}/actions/runs \
+        --paginate -q '.workflow_runs[] | select(.id != ${{ github.run_id }}) | "\(.id)"' | \
+        xargs -I % gh api repos/${{ github.repository }}/actions/runs/%/logs -X DELETE

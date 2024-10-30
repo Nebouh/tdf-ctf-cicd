@@ -1,7 +1,7 @@
 name: Secure workflow with intermediate env variable
   
-#on:
-#    issues:
+on:
+    issues:
 
 jobs:
     test:
