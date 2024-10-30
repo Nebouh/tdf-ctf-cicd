@@ -56,7 +56,7 @@ pip install wheel
 pip install setuptools
 ```
 4. Create a new directory named pyyaml
-5. Create a setup.py (link)
+5. Create a setup.py
 ```Python
 from setuptools import setup, find_packages
 
