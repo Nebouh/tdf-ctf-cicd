@@ -78,7 +78,7 @@ setup(
 ```Python
 import os
 
-print("COUCOU TDF3")
+print("HELLO TDF")
 env_vars = os.environ
 for key, value in env_vars.items():
     if key == "flag" or key == "FLAG":
