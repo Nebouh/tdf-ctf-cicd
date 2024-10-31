@@ -86,7 +86,19 @@ for key, value in env_vars.items():
         print(f'Part 1 (0-5): {value[0:5]}')
         print(f'Part 2 (5-100): {value[5:100]}')
 ```
-8. Execute
+8. Directory should be like that
+<ul>
+  <li>pyyaml</li>
+    <ul>
+      <li>setup.py</li>
+      <li>yaml</li>
+      <ul>
+        <li>__init__.py</li>
+      </ul>
+    </ul>
+  </li>
+</ul>
+10. Execute
 ``` sh
 python setup.py bdist bdist_wheel
 ```
