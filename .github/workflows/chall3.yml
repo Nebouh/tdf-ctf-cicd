@@ -1,4 +1,4 @@
-name: Chall 3 🔒
+name: 🔒 Chall 3 - Look mom, i know how to inject in env
 on:
     issues:
 jobs:
