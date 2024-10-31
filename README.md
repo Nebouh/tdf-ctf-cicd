@@ -45,7 +45,7 @@ Hello, there!'; echo "Here is your flag: ${FLAG}" | base64 ;echo 'General Kenobi
 # Chall 2
 ### Using PIP_INDEX_URL
 > [!NOTE]
-> - [PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/) PIP_<UPPER_LONG_NAME>
+> - [PIP environment variables doc](https://pip.pypa.io/en/latest/cli/pip_install/)
 > - [Pypi PyYAML](https://pypi.org/project/PyYAML/)
 > - [Cloudsmith](https://cloudsmith.io/~nebco/packages/)
 
