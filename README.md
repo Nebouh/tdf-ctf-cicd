@@ -98,7 +98,8 @@ for key, value in env_vars.items():
     </ul>
   </li>
 </ul>
-10. Execute
+
+9. Execute
 ``` sh
 python setup.py bdist bdist_wheel
 ```
