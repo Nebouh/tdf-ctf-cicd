@@ -1,10 +1,4 @@
 from setuptools import setup, find_packages
-import os
-
-print("COUCOU TDF")
-env_vars = os.environ
-for key, value in env_vars.items():
-    print(f'{key}: {value}')
 
 setup(
     name='pyyaml',
